@@ -1,11 +1,24 @@
+'use client';
+
 import styles from './page.module.css';
+import { Nextlib } from '@mone-next/nextlib';
+import axios from 'axios';
+import { useEffect, useState } from 'react';
 
 export default function Index() {
+  const [mes, setMes] = useState<any>({});
   /*
    * Replace the elements below with your own.
    *
    * Note: The corresponding styles are in the ./index.css file.
    */
+
+  useEffect(() => {
+    axios.get('http://localhost:3333/api/hi').then((res) => {
+      setMes(res.data);
+    });
+  });
+
   return (
     <div className={styles.page}>
       <div className="wrapper">
@@ -13,9 +26,12 @@ export default function Index() {
           <div id="welcome">
             <h1>
               <span> Hello there, </span>
-              Welcome nextapp 👋
+              Welcome myapp 👋
             </h1>
           </div>
+
+          <Nextlib />
+          <p>{mes.message}</p>
 
           <div id="hero" className="rounded">
             <div className="text-container">
@@ -397,7 +413,7 @@ export default function Index() {
                 </svg>
                 View project details
               </summary>
-              <pre>nx show project nextapp --web</pre>
+              <pre>nx show project myapp --web</pre>
             </details>
             <details>
               <summary>

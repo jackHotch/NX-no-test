@@ -1,9 +1,9 @@
 {
-  "name": "nextapp",
+  "name": "myapp",
   "$schema": "../../node_modules/nx/schemas/project-schema.json",
-  "sourceRoot": "apps/nextapp",
+  "sourceRoot": "apps/myapp",
   "projectType": "application",
   "tags": [],
-  "// targets": "to see all targets run: nx show project nextapp --web",
+  "// targets": "to see all targets run: nx show project myapp --web",
   "targets": {}
 }
